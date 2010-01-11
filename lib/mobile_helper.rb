@@ -243,12 +243,8 @@ module Jqtouch
       effect = options.delete(:effect) || nil
       options[:class] = effect if effect 
       options[:target] = item[:target] if item.has_key?(:target)
-      if options[:rel]
-        none = 1
-      elsif item[:url][0..3] == 'http'
-        options[:rel] = "external"
-      else
-        options[:rel] = nil
+      if item[:rel]
+        options[:rel] = item[:rel]
       end
       list_text = ''
       list_text << link_to(item[:name], item[:url], options)
