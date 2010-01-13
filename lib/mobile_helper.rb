@@ -248,7 +248,9 @@ module Jqtouch
       end
       list_text = ''
       list_text << link_to(item[:name], item[:url], options)
+      if options[:mobile] == true then list_text << "<br/><span class='subhead'>" end
       list_text << link_to(item[:subhead].untaint, item[:url], options) if item[:subhead]
+      if options[:mobile] == true then list_text << "</span>" end
       if item.has_key?(:image_filename)
         list_text = link_to("<img src=\"#{item[:image_filename]}\" class=\"sp-list-image\"> #{item[:name]}", item[:url], options)
         image_class = "image-list-item"
