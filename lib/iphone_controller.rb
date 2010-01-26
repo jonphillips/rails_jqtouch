@@ -65,7 +65,7 @@ module Jqtouch
       
       # Verifica que el User Agent sea el correspondiente a Mobile Safari, para lo cual devuelve +true+.
       def is_iphone_request?
-        request.user_agent =~ /(Mobile\/.+Safari|Mobile Safari)/
+        request.user_agent =~ /(Mobile\/.+Safari|Mobile Safari|AppleWebKit)/
       end
       
       # Verifica que el subdominio sea del tipo iphone.dominio.com.
