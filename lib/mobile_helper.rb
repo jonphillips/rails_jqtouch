@@ -255,7 +255,11 @@ module Jqtouch
         list_text = link_to("<img src=\"#{item[:image_filename]}\" class=\"sp-list-image\"> #{item[:name]}", item[:url], options)
         image_class = "image-list-item"
       end
-      content_tag(:li, list_text, :class => 'arrow')
+      if item[:url] != nil
+        content_tag(:li, list_text, :class => 'arrow')
+      else
+        content_tag(:li, list_text)
+      end
     end
     
     # Generate a list (ul) with +edgetoedge+ class, the elements of the list items are specified by +items????+, 
