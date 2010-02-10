@@ -246,6 +246,7 @@ module Jqtouch
       if item[:rel]
         options[:rel] = item[:rel]
       end
+      
       list_text = ''
       if item[:url].nil?
         list_text << item[:name]
