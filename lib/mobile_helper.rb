@@ -252,7 +252,7 @@ module Jqtouch
         if options[:mobile] == true then list_text << "<br/><span class='subhead'>" end
         if item[:subhead] then list_text << item[:subhead].untaint end
         if options[:mobile] == true then list_text << "</span>" end
-        content_tag(:li, list_text, :class => 'arrow')
+        content_tag(:li, list_text)
       else 
         list_text << link_to(item[:name], item[:url], options)
         if options[:mobile] == true then list_text << "<br/><span class='subhead'>" end
@@ -262,7 +262,7 @@ module Jqtouch
           list_text = link_to("<img src=\"#{item[:image_filename]}\" class=\"sp-list-image\"> #{item[:name]}", item[:url], options)
           image_class = "image-list-item"
         end
-        content_tag(:li, list_text)
+        content_tag(:li, list_text, :class => 'arrow')
       end
     end
     
