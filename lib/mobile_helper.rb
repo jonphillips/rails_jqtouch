@@ -301,7 +301,7 @@ module Jqtouch
       right = options.delete(:right_button)
       html = back ? jqt_back_button(back) : ""
       html = jqt_home_back_button(home) if home
-      html = html << jqt_button_to(right[:name], right[:link] ) if right
+      html = html << jqt_button_to(right[:name], right[:link], { :class => right[:class], :id => right[:id] } ) if right
       
       
       content_tag :div, 
